@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assest/robot.png">
+  <meta name="description" content="MathBot te facilita realizar operaciones matemáticas como áreas y perímetros, porcentajes, sumatorias y más, de manera rápida y fácil.">
+  <title>MathBot</title>
+</head>
+<body>
+  <header>
+    <h1>MathBot</h1>
+    <script src="./calcular.js"></script>
+    <script src="./salarios.js"></script>
+    <img src="./assest/robot.png" alt="logo robot">
+    <p>MathBot te facilita calculos, porcentajes, sumatorias y demás análisis matemáticos.</p>
+  </header>
+  <main>
+<!-- CALCULOS -->
+    <section class="main__container-calculo">
+      <div class="main__container-title">
+        <h2>Figuras geométricas</h2>
+        <p>Calcula el <span>área</span> y el <span>perímetro</span> de diferentes figuras geométricas de manera fácil y rápida. Solo debes introducir el valor indicado y elegir que  calculo quieres hacer.</p>
+      </div>
+      <img class="main__container-imagen" src="assest/geometryvec.png" alt="figura-geometrica">
+      <div class="main__container-scroll">
+        <article class="main__container-figura">
+          <h3>Cuadrado</h3>
+          <p>A continuación, escribe cuánto mide cada lado de tu cuadrado:</p>
+          <input id="inputCuadrado" type="number"/>
+          <label for="inputCuadrado">cm</label>
+          <h4>¿Qué deseas calcular?</h4>
+          <button type="button" onclick="calcularPerimetroCuadrado()">Perímetro</button>
+          <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+          <h5> Su resultado es: </h5>
+          <p id="resultado1"></p>
+        </article>
+        <img class="main__container-arrow"" src="./assest/right-arrow.svg" alt="indicacion-scroll">
+        <article class="main__container-figura main__container-figura-triangulo">
+          <h3>Triángulo</h3>
+          <p>A continuación, escribe cuánto miden los lados de tu triangulo:</p>
+          <input id="inputTriangulo1" placeholder="lado A" type="number"/>
+          <label for="inputTriangulo1">cm</label>
+          <input id="inputTriangulo2" placeholder="lado B" type="number"/>
+          <label for="inputTriangulo2">cm</label>
+          <input id="inputTriangulo3" placeholder="base" type="number"/>
+          <label for="inputTriangulo3">cm</label>
+          <input id="inputTriangulo4" placeholder="altura" type="number"/>
+          <label for="inputTriangulo4">cm</label>
+          <h4>¿Qué deseas calcular?</h4>
+          <button type="button" onclick="calcularPerimetroTriangulo()">Perímetro</button>
+          <button type="button" onclick="calcularAreaTriangulo()">Área</button>
+          <h5> Su resultado es: </h5>
+          <p id="resultado2"></p>
+        </article>
+        <img class="main__container-arrow"" src="./assest/right-arrow.svg" alt="indicacion-scroll">
+        <article class="main__container-figura">
+          <h3>Circulo</h3>
+          <p>A continuación, escribe cuánto mide el radio de tu círculo:</p>
+          <input id="inputCirculo" type="number"/>
+          <label for="inputCirculo">cm</label>
+          <h4>¿Qué deseas calcular?</h4>
+          <button type="button" onclick="calcularPerimetroCirculo()">Perímetro</button>
+          <button type="button" onclick="calcularAreaCirculo()">Área</button>
+          <h5> Su resultado es: </h5>
+          <p id="resultado3"></p>
+        </article>
+      </div>
+    </section>
+<!-- PORCENTAJES -->
+    <section class="main__container-porcentajes">
+      <span class="main__container-separation"></span>
+      <div class="main__container-title">
+        <h2> Porcentajes y Descuentos</h2>
+        <p>Calcula el precio con <span>descuento</span> o <span>porcentaje</span> del valor que requieras.</p>
+        <img class="main__container-imagen" src="assest/porcentaje.png" alt="figura-porcentaje">
+      </div>
+      <article class="main__container-article">
+        <div class="main__container-title">
+          <h3>Porcentaje</h3>
+          <p>A continuación, escribe el precio original del artículo y el descuento que quieres aplicar:</p>
+        </div>
+        <form>
+          <label for="inputPrice">$</label>
+          <input id="inputPrice" type="number">
+          <label for="inputDiscount">%</label>
+          <input id="inputDiscount" type="number">
+          <button type="button" onclick="onClickButtonPrecioConDescuento()">Calcular</button>
+          <h5> El precio con descuento es: </h5>
+          <p id="resultadoP"></p>
+        </form>
+      </article>
+    </section>
+<!-- SUMATORIA -->
+    <section class="main__container-sumatoria">
+      <span class="main__container-separation"></span>
+      <div class="main__container-title">
+          <h2> Sumatoria</h2>
+          <p>Calcula la <span>sumatoria,</span> para representar la suma de muchos o infinitos sumandos.</p>
+          <img class="main__container-imagen" src="assest/promedio.png" alt="figura-promedio y sumatoria">
+      </div>
+      <article class="main__container-formSumatoria">
+          <h3>	Σ </h3>
+          <p>Ingresar el valor del <span>límite inferior (i)</span> y el <span>límite superior(n) para calcular la sumatoria.</p>
+          <form>
+            <label for="indice"> i</label>
+            <input id="indice" type="number">
+            <label for="limite">n </label>
+            <input id="limite" type="number">
+
+            <button type="button" onclick="clickEnBotonSumatoria()">Calcular</button>
+            <h5> El resultado de tu sumatoria es: </h5>
+            <p id="resultadoS"></p>
+          </form>
+      </article>
+    </section>
+    
+    
+
+
+
+      
+
+  </main>  
+</body>
+</html>
